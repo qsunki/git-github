@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  web_scraping:
+  get_problem_and_create_issue:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +26,6 @@ jobs:
           npm install -g octokit   
 
       - name: Run Playwright and Create GitHub Issue
-        run: node main.js
+        run: npm start
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
