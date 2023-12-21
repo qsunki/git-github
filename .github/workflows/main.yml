@@ -23,6 +23,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
+          npx playwright install
 
       - name: Run Playwright and Create GitHub Issue
         run: npm start
