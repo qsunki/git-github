@@ -1,0 +1,31 @@
+# .github/workflows/main.yml
+
+name: Get problem and GitHub Issue
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web_scraping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          npm install -g playwright
+
+      - name: Run Playwright and Create GitHub Issue
+        run: node main.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
