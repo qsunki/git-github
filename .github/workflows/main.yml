@@ -22,8 +22,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm install
           npm install -g playwright
+          npm install -g octokit   
 
       - name: Run Playwright and Create GitHub Issue
         run: node main.js
