@@ -20,7 +20,7 @@ async function run() {
 
   // UTC+9 설정
   const options = { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' };
-  const dateFormatter = new Intl.DateTimeFormat('en-US', options);
+  const dateFormatter = new Intl.DateTimeFormat('ko-KR', options);
 
   // 날짜를 문자열로 변환
   const formattedDate = dateFormatter.format(today);
